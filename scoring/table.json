@@ -1,0 +1,753 @@
+{
+ "columns": [
+  "kaedim",
+  "polaris"
+ ],
+ "labels": {
+  "kaedim": "authored",
+  "polaris": "default"
+ },
+ "rows": [
+  {
+   "task": "bottles",
+   "policy": "molmo",
+   "real_mean": 9.5,
+   "real_ci": [
+    7.15,
+    11.75
+   ],
+   "kaedim": {
+    "run": "K2_bot_molmo_plain",
+    "mean": 5.95,
+    "scores": [
+     5.0,
+     16.0,
+     0.0,
+     8.0,
+     5.0,
+     0.0,
+     0.0,
+     5.0,
+     0.0,
+     8.0,
+     16.0,
+     0.0,
+     8.0,
+     0.0,
+     8.0,
+     0.0,
+     8.0,
+     16.0,
+     16.0,
+     0.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    -6.95,
+    0.0
+   ],
+   "kaedim_consistent": true,
+   "polaris": {
+    "run": "S1_PS_bot_molmo",
+    "mean": 6.25,
+    "scores": [
+     10.0,
+     5.0,
+     10.0,
+     8.0,
+     16.0,
+     5.0,
+     8.0,
+     8.0,
+     5.0,
+     8.0,
+     0.0,
+     0.0,
+     0.0,
+     16.0,
+     16.0,
+     0.0,
+     0.0,
+     10.0,
+     0.0,
+     0.0
+    ]
+   },
+   "polaris_gap_ci": [
+    -6.6,
+    0.15000000000000036
+   ],
+   "polaris_consistent": true,
+   "closer": "polaris",
+   "p_first_closer": 0.43185
+  },
+  {
+   "task": "bottles",
+   "policy": "pi05",
+   "real_mean": 10.05,
+   "real_ci": [
+    7.65,
+    12.35
+   ],
+   "kaedim": {
+    "run": "K1_bot_pi05_plain",
+    "mean": 9.4,
+    "scores": [
+     13.0,
+     8.0,
+     8.0,
+     13.0,
+     8.0,
+     0.0,
+     13.0,
+     16.0,
+     16.0,
+     5.0,
+     8.0,
+     8.0,
+     16.0,
+     8.0,
+     8.0,
+     8.0,
+     8.0,
+     8.0,
+     8.0,
+     8.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    -3.55,
+    2.3000000000000007
+   ],
+   "kaedim_consistent": true,
+   "polaris": {
+    "run": "B0_PS_bot_pi05_r2",
+    "mean": 8.9,
+    "scores": [
+     8.0,
+     5.0,
+     13.0,
+     13.0,
+     5.0,
+     13.0,
+     8.0,
+     8.0,
+     13.0,
+     8.0,
+     13.0,
+     8.0,
+     8.0,
+     8.0,
+     8.0,
+     5.0,
+     8.0,
+     8.0,
+     13.0,
+     5.0
+    ]
+   },
+   "polaris_gap_ci": [
+    -3.8499999999999996,
+    1.5500000000000007
+   ],
+   "polaris_consistent": true,
+   "closer": "kaedim",
+   "p_first_closer": 0.6354
+  },
+  {
+   "task": "bowls",
+   "policy": "molmo",
+   "real_mean": 29.75,
+   "real_ci": [
+    23.5,
+    35.75
+   ],
+   "kaedim": {
+    "run": "RB_BOWLS_a + RB_BOWLS_b",
+    "mean": 25.75,
+    "scores": [
+     30.0,
+     30.0,
+     30.0,
+     15.0,
+     10.0,
+     30.0,
+     50.0,
+     30.0,
+     30.0,
+     10.0,
+     10.0,
+     40.0,
+     10.0,
+     30.0,
+     15.0,
+     30.0,
+     5.0,
+     30.0,
+     50.0,
+     30.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    -12.25,
+    4.25
+   ],
+   "kaedim_consistent": true,
+   "polaris": {
+    "run": "S2_PS_bowls_molmo",
+    "mean": 16.75,
+    "scores": [
+     15.0,
+     20.0,
+     20.0,
+     15.0,
+     10.0,
+     10.0,
+     15.0,
+     30.0,
+     15.0,
+     10.0,
+     15.0,
+     10.0,
+     20.0,
+     15.0,
+     20.0,
+     30.0,
+     15.0,
+     10.0,
+     20.0,
+     20.0
+    ]
+   },
+   "polaris_gap_ci": [
+    -19.5,
+    -6.25
+   ],
+   "polaris_consistent": false,
+   "closer": "kaedim",
+   "p_first_closer": 0.99765
+  },
+  {
+   "task": "bowls",
+   "policy": "pi05",
+   "real_mean": 29.25,
+   "real_ci": [
+    23.0,
+    35.5
+   ],
+   "kaedim": {
+    "run": "C2_bowls_pi05",
+    "mean": 30.5,
+    "scores": [
+     15.0,
+     30.0,
+     30.0,
+     40.0,
+     30.0,
+     50.0,
+     30.0,
+     10.0,
+     15.0,
+     50.0,
+     10.0,
+     30.0,
+     30.0,
+     30.0,
+     30.0,
+     30.0,
+     30.0,
+     50.0,
+     40.0,
+     30.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    -6.75,
+    9.5
+   ],
+   "kaedim_consistent": true,
+   "polaris": {
+    "run": "S7_PS_bowls_pi05",
+    "mean": 23.0,
+    "scores": [
+     15.0,
+     15.0,
+     30.0,
+     30.0,
+     15.0,
+     5.0,
+     30.0,
+     30.0,
+     30.0,
+     10.0,
+     15.0,
+     50.0,
+     15.0,
+     20.0,
+     30.0,
+     30.0,
+     20.0,
+     30.0,
+     10.0,
+     30.0
+    ]
+   },
+   "polaris_gap_ci": [
+    -14.0,
+    1.5
+   ],
+   "polaris_consistent": true,
+   "closer": "kaedim",
+   "p_first_closer": 0.9018
+  },
+  {
+   "task": "blocks",
+   "policy": "molmo",
+   "real_mean": 3.5,
+   "real_ci": [
+    1.5,
+    5.5
+   ],
+   "kaedim": {
+    "run": "C1_blocks_molmo",
+    "mean": 7.75,
+    "scores": [
+     10.0,
+     10.0,
+     5.0,
+     10.0,
+     10.0,
+     10.0,
+     5.0,
+     5.0,
+     10.0,
+     5.0,
+     5.0,
+     5.0,
+     10.0,
+     5.0,
+     10.0,
+     5.0,
+     10.0,
+     10.0,
+     5.0,
+     10.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    1.75,
+    6.5
+   ],
+   "kaedim_consistent": false,
+   "polaris": {
+    "run": "S3_PS_blocks_molmo",
+    "mean": 12.75,
+    "scores": [
+     10.0,
+     10.0,
+     20.0,
+     10.0,
+     10.0,
+     10.0,
+     10.0,
+     10.0,
+     20.0,
+     10.0,
+     10.0,
+     20.0,
+     10.0,
+     10.0,
+     10.0,
+     20.0,
+     20.0,
+     5.0,
+     20.0,
+     10.0
+    ]
+   },
+   "polaris_gap_ci": [
+    6.25,
+    12.25
+   ],
+   "polaris_consistent": false,
+   "closer": "kaedim",
+   "p_first_closer": 1.0
+  },
+  {
+   "task": "blocks",
+   "policy": "pi05",
+   "real_mean": 6.0,
+   "real_ci": [
+    4.0,
+    8.25
+   ],
+   "kaedim": {
+    "run": "T1_blocks_pi05",
+    "mean": 5.75,
+    "scores": [
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     10.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     10.0,
+     5.0,
+     5.0,
+     10.0,
+     5.0,
+     5.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    -2.5,
+    1.75
+   ],
+   "kaedim_consistent": true,
+   "polaris": {
+    "run": "ZZ1_PS_blocks_pi05",
+    "mean": 5.5,
+    "scores": [
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     10.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     10.0,
+     5.0,
+     5.0,
+     5.0
+    ]
+   },
+   "polaris_gap_ci": [
+    -2.75,
+    1.5
+   ],
+   "polaris_consistent": true,
+   "closer": "kaedim",
+   "p_first_closer": 0.52955
+  },
+  {
+   "task": "latte",
+   "policy": "molmo",
+   "real_mean": 5.9,
+   "real_ci": [
+    4.5,
+    7.3
+   ],
+   "kaedim": {
+    "run": "V2_K_latte_molmo",
+    "mean": 5.0,
+    "scores": [
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    -2.3,
+    0.5999999999999996
+   ],
+   "kaedim_consistent": true,
+   "polaris": {
+    "run": "S4_PS_latte_molmo",
+    "mean": 3.75,
+    "scores": [
+     5.0,
+     5.0,
+     0.0,
+     0.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     0.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     0.0,
+     5.0,
+     0.0,
+     5.0,
+     5.0
+    ]
+   },
+   "polaris_gap_ci": [
+    -3.9000000000000004,
+    -0.40000000000000036
+   ],
+   "polaris_consistent": false,
+   "closer": "kaedim",
+   "p_first_closer": 0.99705
+  },
+  {
+   "task": "latte",
+   "policy": "pi05",
+   "real_mean": 3.65,
+   "real_ci": [
+    2.25,
+    5.1
+   ],
+   "kaedim": {
+    "run": "K3_latte_pi05_plain",
+    "mean": 3.75,
+    "scores": [
+     0.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     0.0,
+     5.0,
+     0.0,
+     5.0,
+     5.0,
+     0.0,
+     0.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    -1.6500000000000004,
+    1.75
+   ],
+   "kaedim_consistent": true,
+   "polaris": {
+    "run": "S9_PS_latte_pi05",
+    "mean": 0.25,
+    "scores": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     5.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "polaris_gap_ci": [
+    -4.95,
+    -1.9
+   ],
+   "polaris_consistent": false,
+   "closer": "kaedim",
+   "p_first_closer": 1.0
+  },
+  {
+   "task": "clear_table",
+   "policy": "molmo",
+   "real_mean": 45.35,
+   "real_ci": [
+    34.25,
+    55.4
+   ],
+   "kaedim": {
+    "run": "V2_K_cleartable_molmo",
+    "mean": 42.5,
+    "scores": [
+     47.0,
+     55.0,
+     42.0,
+     47.0,
+     52.0,
+     22.0,
+     55.0,
+     52.0,
+     50.0,
+     33.0,
+     52.0,
+     33.0,
+     15.0,
+     50.0,
+     55.0,
+     50.0,
+     53.0,
+     35.0,
+     30.0,
+     22.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    -14.450000000000003,
+    9.199999999999996
+   ],
+   "kaedim_consistent": true,
+   "polaris": {
+    "run": "S5_PS_ct_molmo",
+    "mean": 38.65,
+    "scores": [
+     52.0,
+     18.0,
+     13.0,
+     22.0,
+     47.0,
+     18.0,
+     38.0,
+     30.0,
+     57.0,
+     40.0,
+     48.0,
+     60.0,
+     32.0,
+     37.0,
+     18.0,
+     65.0,
+     50.0,
+     43.0,
+     25.0,
+     60.0
+    ]
+   },
+   "polaris_gap_ci": [
+    -19.15,
+    6.149999999999999
+   ],
+   "polaris_consistent": true,
+   "closer": "kaedim",
+   "p_first_closer": 0.8052
+  },
+  {
+   "task": "clear_table",
+   "policy": "pi05",
+   "real_mean": 47.8,
+   "real_ci": [
+    39.85,
+    55.5
+   ],
+   "kaedim": {
+    "run": "ZZ2_K_ct_pi05",
+    "mean": 41.4,
+    "scores": [
+     45.0,
+     55.0,
+     47.0,
+     50.0,
+     40.0,
+     28.0,
+     45.0,
+     50.0,
+     35.0,
+     50.0,
+     35.0,
+     40.0,
+     45.0,
+     38.0,
+     25.0,
+     48.0,
+     41.0,
+     45.0,
+     28.0,
+     38.0
+    ]
+   },
+   "kaedim_gap_ci": [
+    -14.850000000000001,
+    2.3500000000000014
+   ],
+   "kaedim_consistent": true,
+   "polaris": {
+    "run": "SA_PS_ct_pi05",
+    "mean": 35.7,
+    "scores": [
+     40.0,
+     50.0,
+     35.0,
+     33.0,
+     52.0,
+     30.0,
+     30.0,
+     26.0,
+     46.0,
+     25.0,
+     20.0,
+     48.0,
+     30.0,
+     45.0,
+     30.0,
+     33.0,
+     33.0,
+     25.0,
+     40.0,
+     43.0
+    ]
+   },
+   "polaris_gap_ci": [
+    -20.85,
+    -2.950000000000003
+   ],
+   "polaris_consistent": false,
+   "closer": "kaedim",
+   "p_first_closer": 0.98215
+  }
+ ],
+ "rejected": [],
+ "consistent": {
+  "kaedim": 9,
+  "polaris": 5
+ },
+ "first_closer": 9,
+ "decided": 10,
+ "missing": [],
+ "select": "n20",
+ "seed": 0,
+ "bootstrap": 20000
+}

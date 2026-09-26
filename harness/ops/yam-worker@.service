@@ -1,0 +1,15 @@
+[Unit]
+Description=YAM sim benchmark worker on GPU %i
+After=docker.service network-online.target
+Requires=docker.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /opt/bench/worker.sh %i
+Restart=always
+RestartSec=30
+User=root
+WorkingDirectory=/opt/bench
+
+[Install]
+WantedBy=multi-user.target

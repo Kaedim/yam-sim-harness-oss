@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+
+# scene data and run output are not committed
+*.usd
+*.usda
+*.ply
+*.mp4
+!figures/*.png
+runs/
+trials/
+build/

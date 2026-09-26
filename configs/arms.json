@@ -1,0 +1,5 @@
+{
+  "_doc": "Asset arms the scoring gate knows. A run belongs to an arm only if its own run.log shows this arm name (ASSET_ARM), an asset root folder with this name, this splat file, and this SPLAT_DZ as the runner prints it (%+.3f). Add your own arm here; the first two are the ones the paper reports.",
+  "kaedim":  {"label": "authored", "root_name": "assets",         "splat": "splat_env2_k080.usd",   "dz": "-0.005"},
+  "polaris": {"label": "default",  "root_name": "assets_polaris", "splat": "polaris_env_final.usd", "dz": "-0.011"}
+}

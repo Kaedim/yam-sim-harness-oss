@@ -1,0 +1,23 @@
+{
+ "_note": "Largest dimension in metres, typed by eye from the photo and everyday familiarity, the way a PolaRiS user sizes an object in the compose GUI. No tape measure, BOM, board or authored-arm metadata consulted. Override any value and rerun scripts/usd_all.sh.",
+ "sm_storagebin_plasticopen_f43": 0.30,
+ "sm_bottle_glassheineken_8d6": 0.23,
+ "sm_bottle_glasspellegrino_d5d": 0.28,
+ "sm_beerbottle_glasssapporo_d06": 0.23,
+ "sm_baseball_leatherstitched_713": 0.075,
+ "sm_storagebin_plasticclear": 0.30,
+ "sm_grapes_plasticgreen_a24": 0.15,
+ "sm_grapes_thinplastichollow_a7d": 0.15,
+ "sm_spoon_metalpolished_b32": 0.18,
+ "sm_mug_plasticred_02c": 0.12,
+ "sm_rubikscube_plasticpuzzle_64e": 0.06,
+ "sm_plate_plasticspeckled_3b0": 0.20,
+ "sm_cokecan_aluminumcylindrical_5ba": 0.12,
+ "sm_cuttingboard_bamboofunctional_c14": 0.35,
+ "sm_pitcher_metalbrushed_046": 0.12,
+ "sm_cleaningbottle_plasticlabel_3fc": 0.25,
+ "sm_block_woodblue_d8b": 0.04,
+ "sm_block_woodgreen_9d5": 0.04,
+ "sm_block_woodreda_e0a": 0.04,
+ "sm_bowl_plasticribbed_07f": 0.15
+}

@@ -1,0 +1,7 @@
+# scoring/ and tests/ use only the Python standard library (3.9+).
+# figures/:
+matplotlib>=3.5
+numpy>=1.21
+pillow>=9
+usd-core>=23.5      # pxr, for fig1_objects.py and usd_physics.py
+coacd>=1.0          # collider stand-in in fig1_objects.py

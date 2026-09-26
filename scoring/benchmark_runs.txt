@@ -1,0 +1,40 @@
+# The runs the reported benchmark uses: for each cell and condition, the most recent batch of
+# twenty trials that passed the configuration gate (build_table.py admit). One line per cell-column;
+# '+' joins the shards of a single batch. Every batch that passed the gate, including the ones not
+# reported here, is listed in docs/RESULTS.md and the paper's Appendix A.
+#
+#   build_table.py --runs RUNS --real real_reference_pertrial.csv --runs-list benchmark_runs.txt
+#
+# Each id is a directory under s3://<bucket>/yam-bench/ holding results.jsonl and run.log, plus
+# job.json for the MolmoAct2 runs, which is where the solver step count is read from.
+
+# bottles, MolmoAct2
+K2_bot_molmo_plain
+S1_PS_bot_molmo
+# bottles, pi0.5
+K1_bot_pi05_plain
+B0_PS_bot_pi05_r2
+# bowls, MolmoAct2
+RB_BOWLS_a + RB_BOWLS_b
+S2_PS_bowls_molmo
+# bowls, pi0.5
+C2_bowls_pi05
+S7_PS_bowls_pi05
+# blocks, MolmoAct2
+C1_blocks_molmo
+S3_PS_blocks_molmo
+# blocks, pi0.5
+T1_blocks_pi05
+ZZ1_PS_blocks_pi05
+# latte, MolmoAct2
+V2_K_latte_molmo
+S4_PS_latte_molmo
+# latte, pi0.5
+K3_latte_pi05_plain
+S9_PS_latte_pi05
+# clear_table, MolmoAct2
+V2_K_cleartable_molmo
+S5_PS_ct_molmo
+# clear_table, pi0.5
+ZZ2_K_ct_pi05
+SA_PS_ct_pi05
