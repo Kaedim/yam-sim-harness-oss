@@ -67,15 +67,37 @@ pip install -r requirements.txt          # matplotlib, numpy, pillow, usd-core, 
 make test                                # no data or GPU needed; the 4 reproduction tests skip
 ```
 
-Running trials needs NVIDIA Isaac Sim 6.0.1 from its container, one GPU per worker (developed
-on L40S 46 GB), and a policy served over a socket: `harness/pi05_server.py` and
-`harness/molmoact2_bridge.py` are the two provided
-(pi0.5 loads with the reconstructed openpi config in `harness/yam_pi05.py`).
+## Requirements, by what you want to do
+
+| goal | hardware | needs |
+|---|---|---|
+| reproduce the paper's tables and figures | any laptop, no GPU | this repo + the run artefacts (below) |
+| score your own runs against the real trials | any laptop, no GPU | this repo + your run directories |
+| re-run the simulated trials, or run your own assets | one NVIDIA GPU with the Isaac Sim 6.0.1 container (the published runs used an L40S 46 GB, driver 595) | the inputs below + a policy checkpoint served locally |
+| rebuild the scene splat from the video | a Linux CUDA machine, 24 GB GPU is enough | `scene/README.md` |
+
+Nothing here connects to Kaedim infrastructure. Every input is a public download:
+
+| input | where it comes from | licence |
+|---|---|---|
+| robot arm USD, `yam_robot/arm/yam.usd` | [ARISE-Initiative/yamlab](https://github.com/ARISE-Initiative/yamlab), file `yamlab/robot/yam/arm/yam.usd` | MIT |
+| authored object assets (the paper's authored arm) | [Hugging Face: yam-real-to-sim-assets](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-assets) | CC BY 4.0 |
+| default object assets (the PolaRiS-recipe arm) | [Hugging Face: yam-real-to-sim-assets-default](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-assets-default); or rebuild with `asset-arms/default-path/` | CC BY 4.0 |
+| the two scene splats and their transforms | [Hugging Face: yam-real-to-sim-scenes](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-scenes); or rebuild with `scene/` | CC BY 4.0 |
+| run artefacts of the published runs, real per-trial scores, committed table | [Hugging Face: yam-real-to-sim-runs](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-runs) | CC BY 4.0 |
+| real per-trial scores | `scoring/real_reference_pertrial.csv` in this repo | see Licence and credit |
+| pi0.5 YAM checkpoint | [robocurve/pi0.5-yam](https://huggingface.co/robocurve/pi0.5-yam) on Hugging Face, served by `harness/pi05_server.py` inside an [openpi](https://github.com/Physical-Intelligence/openpi) environment with the reconstructed config `harness/yam_pi05.py` | Gemma terms |
+| MolmoAct2 YAM checkpoint | [allenai/MolmoAct2-BimanualYAM](https://huggingface.co/allenai/MolmoAct2-BimanualYAM), served by `examples/yam/host_server_yam.py` from [allenai/molmoact2](https://github.com/allenai/molmoact2); `harness/molmoact2_bridge.py` adapts it to the runner's socket | Apache 2.0 |
+
+Lay the downloads out under `HARNESS_ROOT` as the next sections describe: `assets/` holds the
+authored objects and `yam_robot/`, `assets_polaris/` the default objects, and the splat USDs sit at
+the root.
 
 ## Reproduce the paper's numbers (no GPU)
 
-The run artefacts (`results.jsonl`, `run.log`, `job.json` per run) are released with the
-dataset *[link added at release]*. Download them, then:
+The run artefacts (`results.jsonl`, `run.log`, `job.json` per run) are released as the Hugging Face
+dataset [yam-real-to-sim-runs](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-runs).
+Download it, then with `RUNS` pointing at its `runs/` directory:
 
 ```bash
 make reproduce RUNS=/path/to/runs        # table, Table 4 measures, median check
@@ -131,7 +153,9 @@ the runs used.
 
 ## Bring your own assets
 
-An asset arm is a directory of USDs with the same folder and prim names as `assets/`:
+An asset arm is a directory of USDs with the same folder and prim names as `assets/`. The runner
+opens `<asset_id>/<asset_id>.usd`, so name your files that way (a text `.usda` is fine if you also
+save it with the `.usd` extension, or convert with `usdcat`):
 
 ```
 $HARNESS_ROOT/my_assets/

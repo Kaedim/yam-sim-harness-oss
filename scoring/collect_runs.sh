@@ -1,6 +1,9 @@
 #!/bin/bash
 # Pull the reported runs' artefacts into one local directory that build_table.py can read.
 #
+# This is the authors' tool for our own bucket. Readers do not need it: the same artefacts are
+# published as a Hugging Face dataset (see the README), and build_table.py reads any directory.
+#
 # Each run is a prefix $BUCKET/<run_id>/ holding results.jsonl and run.log, plus job.json for
 # MolmoAct2 runs (the only place MOLMO_NUM_STEPS is recorded). pi0.5 runs need no job.json and
 # some have none; that is expected.
