@@ -22,7 +22,7 @@ run the real robot or score the real side.
 
 The cell was reconstructed twice. The two arms differ only in the objects and the scene splat:
 
-| | authored | default path ([PolaRiS](https://arxiv.org/abs/2512.16881) recipe) |
+| | authored | default path ([PolaRiS](https://arxiv.org/abs/2512.16881)-inspired recipe) |
 |---|---|---|
 | object geometry | reconstructed from one photograph by our pipeline ([projectsim](https://projectsim.ai)) | the same photograph through [TRELLIS](https://arxiv.org/abs/2412.01506) |
 | metric scale | estimated from a printed ChArUco board of known size | typed by hand, no measurement |
@@ -123,7 +123,7 @@ Figure 1 is drawn from the asset USDs rather than the runs:
 
 ```bash
 python3 figures/fig1_objects.py sm_bowl_plasticribbed_07f "ribbed bowl" \
-    --a-root ASSETS/authored --b-root ASSETS/default --photo Photo_CreamBowl.png --out fig1_bowl
+    --a-root ASSETS/authored --b-root ASSETS/default --out fig1_bowl      # add --photo <jpg> for an input-photo column
 ```
 
 ## Re-run the simulated trials
@@ -199,7 +199,7 @@ constants at the top of `scoring/build_table.py`.
   the five tasks, so ranking preservation and MMRV are not computable here.
 - n=20 with discrete staged scores leaves a large noise floor. Three of the ten cells are
   decided by half a point or less and should be read as ties.
-- Stack blocks with MolmoAct2 is not reached by either arm; it is reported, not excluded.
+- Stack blocks with MolmoAct2 is inconsistent with the real robot under both arms; it is reported, not excluded.
 - The default asset arm was built by us following the published PolaRiS recipe; it is
   PolaRiS-inspired, not PolaRiS's own assets or scene.
 
@@ -207,5 +207,6 @@ constants at the top of `scoring/build_table.py`.
 
 Code: Apache 2.0, see `LICENSE`.
 
-The real per-trial scores in `scoring/real_reference_pertrial.csv` were produced by Robocurve
-and are released with their permission. Please credit them if you use the real reference.
+The real per-trial scores in `scoring/real_reference_pertrial.csv` were produced by Robocurve, a
+third-party evaluator, under a benchmarking agreement commissioned and paid for by Kaedim, and are
+released with their permission. Please credit Robocurve if you use the real reference.
