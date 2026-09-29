@@ -20,13 +20,16 @@ if [ "${SPLAT_ENV:-1}" != "0" ]; then
 else
   ISAAC_IMAGE=${ISAAC_IMAGE:-nvcr.io/nvidia/isaac-sim:5.1.0}; OVCACHE=${OVCACHE:-/opt/ovcache}
 fi
-mkdir -p $BENCH_ROOT/jobs $OVCACHE/{kit,cache,nvomni,data}; chown -R 1234:1234 $OVCACHE $HARNESS_ROOT $BENCH_ROOT/jobs
+OUTDIR=${OUTDIR:-$HARNESS_ROOT/trials}
+mkdir -p $BENCH_ROOT/jobs $OVCACHE/{kit,cache,nvomni,data} "$OUTDIR"; chown -R 1234:1234 $OVCACHE $HARNESS_ROOT $BENCH_ROOT/jobs "$OUTDIR"
+# The container sees only the paths mounted below. OUTDIR is mounted at its own path so it may live
+# anywhere on the host, not only under HARNESS_ROOT.
 docker run --rm --gpus "\"device=${GPU:-0}\"" --network host \
   --entrypoint /isaac-sim/python.sh \
   -e "TASKSET=${TASKSET:-bottles}" -e "TASK=${TASK:-}" \
   -e "CONTROL_HZ=${CONTROL_HZ:-30}" -e "CAM_W=${CAM_W:-640}" -e "CAM_H=${CAM_H:-360}" -e "CROP_H=${CROP_H:-0}" \
   -e "ITERS=${ITERS:-400}" -e "TRIALS=${TRIALS:-1}" -e "PORT=${PORT:-5566}" \
-  -e "OUTDIR=${OUTDIR:-$HARNESS_ROOT/trials}" -e HARNESS_ROOT -e "SAVE_CAMS=${SAVE_CAMS:-1}" \
+  -e "OUTDIR=$OUTDIR" -e HARNESS_ROOT -e "SAVE_CAMS=${SAVE_CAMS:-1}" \
   -e "TOP_H=${TOP_H:-0.72}" -e TOP_TILT_DEG -e TOP_X -e TOP_HFOV_DEG -e TOP_RENDER_H -e SPECT_POS -e SPECT_TGT -e OBJ_DX -e BIN_YAW_DEG -e "JITTER=${JITTER:-0.01}" -e RIG -e ARM_X -e ARM_Y -e BACKDROP \
   -e SPLAT_ENV -e SPLAT_USD -e SPLAT_XFORM -e SPLAT_WARMUP -e SPLAT_TABLE -e TABLE_X \
   -e TABLE_MU_S -e TABLE_MU_D -e TABLE_RESTITUTION -e TABLE_R -e TABLE_G -e TABLE_B -e SUN -e DOME \
@@ -41,6 +44,7 @@ docker run --rm --gpus "\"device=${GPU:-0}\"" --network host \
   -v $OVCACHE/data:/isaac-sim/.local/share/ov/data:rw \
   -v $HARNESS_ROOT:$HARNESS_ROOT:rw \
   -v $BENCH_ROOT:$BENCH_ROOT:rw \
+  -v "$OUTDIR":"$OUTDIR":rw \
   -v $RUNNER_DIR:/runner:ro \
   $ISAAC_IMAGE \
   /runner/$(basename "$RUNNER")

@@ -142,6 +142,10 @@ TRIALS=1 ./run_cell.sh configs/latte_pi05.env kaedim # any value can be overridd
 The arms are called `kaedim` (authored) and `polaris` (default path) in the code because the
 published runs recorded those names and the gate reads them back out of the logs.
 
+Trial output goes to `OUTDIR` (default `$HARNESS_ROOT/trials`), one directory per run. The runner
+executes inside the Isaac container, which sees only `HARNESS_ROOT`, `BENCH_ROOT` and `OUTDIR`; keep
+every input under those paths.
+
 The runner reads about 100 environment variables. The reported runs set only the ones in
 `configs/`; everything else stayed at its default. The rest is development surface (physics
 sweeps, camera matching, ablations). Setting any of it leaves the benchmark configuration, and
