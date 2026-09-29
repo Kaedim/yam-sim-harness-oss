@@ -13,7 +13,7 @@ through the same Isaac Sim RTX renderer.
 | cut | `cut_splat_to_environment.py` | the same filters via `cut_generic.py`, which reads the registration and has two 2DGS switches (`CUT_NEEDLE=0`, `CUT_KEEP_FLAT=1`) |
 | renderer | Isaac RTX, via the shipped gsplat converter | same |
 
-The default arm follows the PolaRiS scene recipe ([arXiv 2512.16881](https://arxiv.org/abs/2512.16881) sec. 4
+The default arm follows a PolaRiS-inspired scene recipe ([arXiv 2512.16881](https://arxiv.org/abs/2512.16881) sec. 4
 and App. B, and `docs/custom_environments.md` in `arhanjain/PolaRiS`), with the departures listed below.
 
 ## What is in this folder

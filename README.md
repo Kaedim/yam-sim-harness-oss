@@ -10,14 +10,14 @@ evaluation lands from the real one, for each task and policy, with bootstrap con
 intervals. Every run is checked against a frozen configuration, read from the run's own log,
 before it can count.
 
-This is the code and the scoring for the paper *Measuring Asset Reconstruction Effects in Real-to-Sim
+This is the code and the scoring for the paper *Measuring Asset and Scene Reconstruction Effects in Real-to-Sim
 Robot Evaluation* [link added at release].
 
 ## Results in the paper
 
 A bimanual [I2RT YAM](https://github.com/i2rt-robotics) cell, five tasks, two policies
-(pi0.5 and MolmoAct2), 20 trials per cell. The real trials were run and graded by an
-independent evaluator, Robocurve, on their own rig under their own staged rubrics. We did not
+(pi0.5 and MolmoAct2), 20 trials per cell. The real trials were run and graded by a
+third-party evaluator, Robocurve, on their own rig under their own staged rubrics. We did not
 run the real robot or score the real side.
 
 The cell was reconstructed twice. The two arms differ only in the objects and the scene splat:
@@ -82,7 +82,7 @@ Nothing here connects to Kaedim infrastructure. Every input is a public download
 |---|---|---|
 | robot arm USD, `yam_robot/arm/yam.usd` | [ARISE-Initiative/yamlab](https://github.com/ARISE-Initiative/yamlab), file `yamlab/robot/yam/arm/yam.usd` | MIT |
 | authored object assets (the paper's authored arm) | [Hugging Face: yam-real-to-sim-assets](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-assets) | CC BY 4.0 |
-| default object assets (the PolaRiS-recipe arm) | [Hugging Face: yam-real-to-sim-assets-default](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-assets-default); or rebuild with `asset-arms/default-path/` | CC BY 4.0 |
+| default object assets (the PolaRiS-inspired arm) | [Hugging Face: yam-real-to-sim-assets-default](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-assets-default); or rebuild with `asset-arms/default-path/` | CC BY 4.0 |
 | the two scene splats and their transforms | [Hugging Face: yam-real-to-sim-scenes](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-scenes); or rebuild with `scene/` | CC BY 4.0 |
 | run artefacts of the published runs, real per-trial scores, committed table | [Hugging Face: yam-real-to-sim-runs](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-runs) | CC BY 4.0 |
 | real per-trial scores | `scoring/real_reference_pertrial.csv` in this repo | see Licence and credit |
@@ -200,8 +200,8 @@ constants at the top of `scoring/build_table.py`.
 - n=20 with discrete staged scores leaves a large noise floor. Three of the ten cells are
   decided by half a point or less and should be read as ties.
 - Stack blocks with MolmoAct2 is not reached by either arm; it is reported, not excluded.
-- The default asset arm was built by us following the published recipe, not supplied by the
-  PolaRiS authors.
+- The default asset arm was built by us following the published PolaRiS recipe; it is
+  PolaRiS-inspired, not PolaRiS's own assets or scene.
 
 ## Licence and credit
 

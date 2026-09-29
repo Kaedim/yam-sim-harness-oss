@@ -570,9 +570,8 @@ for name, folder, (x, y), yaw0 in OBJS:
         else:
             print("[grapes] pipeline-authored mass kept (set GRAPES_MASS_KG to override)", flush=True)
     if name == "baseball" and ASSET_ARM != "polaris":
-        # The pipeline picks convexHull / convexDecomposition / sdf and
-        # gave the baseball sdf; for a sphere a bounding-sphere collider is the right choice. Set on
-        # the scene's referenced prims only; the asset file is not modified.
+        # A sphere gets a bounding-sphere collider. The released asset already authors this; the
+        # switch stays so that an asset exported with an SDF collider runs the same way.
         _nsph = 0
         for q in Usd.PrimRange(stage.GetPrimAtPath(pp)):
             if q.HasAPI(UsdPhysics.MeshCollisionAPI):
@@ -580,9 +579,9 @@ for name, folder, (x, y), yaw0 in OBJS:
                 _nsph += 1
         print("[baseball] collision approximation -> boundingSphere on %d mesh prim(s)" % _nsph, flush=True)
     if name == "grapes" and os.environ.get("GRAPES_COLLIDER", "convexDecomposition") not in ("", "asset"):
-        # The bunch is a thin, complex silhouette; its SDF collider jitters at rest
-        # and when dropped. A convex decomposition is stable and close enough for a placed object.
-        # Same in-scene mechanism as the baseball above; the asset file is not modified.
+        # The bunch is a thin, complex silhouette; an SDF collider jitters at rest and when dropped, so
+        # it runs on a convex decomposition. The released asset already authors this; the switch stays
+        # for assets exported with an SDF collider.
         _tok = getattr(UsdPhysics.Tokens, os.environ.get("GRAPES_COLLIDER", "convexDecomposition"))
         _ng = 0
         for q in Usd.PrimRange(stage.GetPrimAtPath(pp)):
