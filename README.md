@@ -81,10 +81,10 @@ Nothing here connects to Kaedim infrastructure. Every input is a public download
 | input | where it comes from | licence |
 |---|---|---|
 | robot arm USD, `yam_robot/arm/yam.usd` | [ARISE-Initiative/yamlab](https://github.com/ARISE-Initiative/yamlab), file `yamlab/robot/yam/arm/yam.usd` | MIT |
-| authored object assets (the paper's authored arm) | [Hugging Face: yam-real-to-sim-assets](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-assets) | CC BY 4.0 |
-| default object assets (the PolaRiS-inspired arm) | [Hugging Face: yam-real-to-sim-assets-default](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-assets-default); or rebuild with `asset-arms/default-path/` | CC BY 4.0 |
-| the two scene splats and their transforms | [Hugging Face: yam-real-to-sim-scenes](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-scenes); or rebuild with `scene/` | CC BY 4.0 |
-| run artefacts of the published runs, real per-trial scores, committed table | [Hugging Face: yam-real-to-sim-runs](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-runs) | CC BY 4.0 |
+| authored object assets (the paper's authored arm) | [Hugging Face: yam-real-to-sim-assets](https://huggingface.co/datasets/projectsim/yam-real-to-sim-assets) | CC BY 4.0 |
+| default object assets (the PolaRiS-inspired arm) | [Hugging Face: yam-real-to-sim-assets-default](https://huggingface.co/datasets/projectsim/yam-real-to-sim-assets-default); or rebuild with `asset-arms/default-path/` | CC BY 4.0 |
+| the two scene splats and their transforms | [Hugging Face: yam-real-to-sim-scenes](https://huggingface.co/datasets/projectsim/yam-real-to-sim-scenes); or rebuild with `scene/` | CC BY 4.0 |
+| run artefacts of the published runs, real per-trial scores, committed table | [Hugging Face: yam-real-to-sim-runs](https://huggingface.co/datasets/projectsim/yam-real-to-sim-runs) | CC BY 4.0 |
 | real per-trial scores | `scoring/real_reference_pertrial.csv` in this repo | see Licence and credit |
 | pi0.5 YAM checkpoint | [robocurve/pi0.5-yam](https://huggingface.co/robocurve/pi0.5-yam) on Hugging Face, served by `harness/pi05_server.py` inside an [openpi](https://github.com/Physical-Intelligence/openpi) environment with the reconstructed config `harness/yam_pi05.py` | Gemma terms |
 | MolmoAct2 YAM checkpoint | [allenai/MolmoAct2-BimanualYAM](https://huggingface.co/allenai/MolmoAct2-BimanualYAM), served by `examples/yam/host_server_yam.py` from [allenai/molmoact2](https://github.com/allenai/molmoact2); `harness/molmoact2_bridge.py` adapts it to the runner's socket | Apache 2.0 |
@@ -96,7 +96,7 @@ the root.
 ## Reproduce the paper's numbers (no GPU)
 
 The run artefacts (`results.jsonl`, `run.log`, `job.json` per run) are released as the Hugging Face
-dataset [yam-real-to-sim-runs](https://huggingface.co/datasets/sanyarobot/yam-real-to-sim-runs).
+dataset [yam-real-to-sim-runs](https://huggingface.co/datasets/projectsim/yam-real-to-sim-runs).
 Download it, then with `RUNS` pointing at its `runs/` directory:
 
 ```bash
