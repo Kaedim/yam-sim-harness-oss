@@ -11,7 +11,8 @@ intervals. Every run is checked against a frozen configuration, read from the ru
 before it can count.
 
 This is the code and the scoring for the paper *Measuring Asset and Scene Reconstruction Effects in Real-to-Sim
-Robot Evaluation* [link added at release].
+Robot Evaluation*, Sanya Verma, Luca Cilio and Velissarios Christodoulou, Kaedim, 2026:
+[arXiv:2610.00731](https://arxiv.org/abs/2610.00731).
 
 ## Results in the paper
 
@@ -202,6 +203,20 @@ constants at the top of `scoring/build_table.py`.
 - Stack blocks with MolmoAct2 is inconsistent with the real robot under both arms; it is reported, not excluded.
 - The default asset arm was built by us following the published PolaRiS recipe; it is
   PolaRiS-inspired, not PolaRiS's own assets or scene.
+
+## Citation
+
+```bibtex
+@misc{verma2026realtosim,
+  title         = {Measuring Asset and Scene Reconstruction Effects in Real-to-Sim Robot Evaluation},
+  author        = {Verma, Sanya and Cilio, Luca and Christodoulou, Velissarios},
+  year          = {2026},
+  eprint        = {2610.00731},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2610.00731}
+}
+```
 
 ## Licence and credit
 
